@@ -15,6 +15,8 @@
 		9C64C804248186A4004624E0 /* MakeUp_Kit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C802248186A4004624E0 /* MakeUp_Kit.xcdatamodeld */; };
 		9C64C806248186A8004624E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C64C805248186A8004624E0 /* Assets.xcassets */; };
 		9C64C809248186A8004624E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C64C807248186A8004624E0 /* LaunchScreen.storyboard */; };
+		9C64C815248188D4004624E0 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C64C814248188D4004624E0 /* Settings.storyboard */; };
+		9C64C81724818913004624E0 /* AllProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C64C81624818913004624E0 /* AllProducts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9C64C805248186A8004624E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C64C808248186A8004624E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C64C80A248186A8004624E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C64C814248188D4004624E0 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9C64C81624818913004624E0 /* AllProducts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllProducts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,59 @@
 		9C64C7F6248186A4004624E0 /* MakeUp Kit */ = {
 			isa = PBXGroup;
 			children = (
+				9C64C8182481891A004624E0 /* CoreData */,
+				9C64C81324818842004624E0 /* LaunchScreen */,
+				9C64C81224818834004624E0 /* Settings */,
+				9C64C81124818829004624E0 /* All Products */,
+				9C64C810248187FB004624E0 /* Home */,
 				9C64C7F7248186A4004624E0 /* AppDelegate.swift */,
 				9C64C7F9248186A4004624E0 /* SceneDelegate.swift */,
 				9C64C7FB248186A4004624E0 /* FirstViewController.swift */,
 				9C64C7FD248186A4004624E0 /* SecondViewController.swift */,
 				9C64C7FF248186A4004624E0 /* Main.storyboard */,
 				9C64C805248186A8004624E0 /* Assets.xcassets */,
-				9C64C807248186A8004624E0 /* LaunchScreen.storyboard */,
 				9C64C80A248186A8004624E0 /* Info.plist */,
 				9C64C802248186A4004624E0 /* MakeUp_Kit.xcdatamodeld */,
 			);
 			path = "MakeUp Kit";
+			sourceTree = "<group>";
+		};
+		9C64C810248187FB004624E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9C64C81124818829004624E0 /* All Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C64C81624818913004624E0 /* AllProducts.storyboard */,
+			);
+			path = "All Products";
+			sourceTree = "<group>";
+		};
+		9C64C81224818834004624E0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9C64C814248188D4004624E0 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9C64C81324818842004624E0 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9C64C807248186A8004624E0 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		9C64C8182481891A004624E0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,8 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C64C809248186A8004624E0 /* LaunchScreen.storyboard in Resources */,
+				9C64C81724818913004624E0 /* AllProducts.storyboard in Resources */,
 				9C64C806248186A8004624E0 /* Assets.xcassets in Resources */,
 				9C64C801248186A4004624E0 /* Main.storyboard in Resources */,
+				9C64C815248188D4004624E0 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlinaHuk.MakeUp-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlinaHuk.MakeUp-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
