@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="egK-MQ-3LL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="wWx-2p-r6Z">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QJg-RE-ABR" customClass="HomeViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ymx-Ld-VeD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYe-l9-yA8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.99848276376724243" green="0.7019839882850647" blue="0.89104694128036499" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="d3j-kY-BFM">
+                                    <size key="itemSize" width="300" height="469"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="60" minY="0.0" maxX="60" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MySectionCollectionViewCell" id="j4s-pO-iHC" customClass="MySectionCollectionViewCell" customModule="MakeUp_Kit" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="128" width="300" height="469"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="469"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cosm1" translatesAutoresizingMaskIntoConstraints="NO" id="zdu-by-846">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="469"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="469" id="NyM-g5-2EM"/>
+                                                        <constraint firstAttribute="width" constant="300" id="zNf-AC-z0d"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-Gh-lZH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="469"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Kit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YyU-K4-2Q0">
+                                                            <rect key="frame" x="35" y="123" width="231" height="222"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="231" id="9QL-fO-Kdj"/>
+                                                                <constraint firstAttribute="height" constant="222" id="nQd-kO-l4R"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="50"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.14017016267123289" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <size key="shadowOffset" width="1" height="1"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.33256662436548223" green="0.13473268902027224" blue="0.23752612684743304" alpha="0.2637253852739726" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="YyU-K4-2Q0" firstAttribute="top" secondItem="Wp6-Gh-lZH" secondAttribute="top" constant="123" id="3pk-de-6f2"/>
+                                                        <constraint firstItem="YyU-K4-2Q0" firstAttribute="leading" secondItem="Wp6-Gh-lZH" secondAttribute="leadingMargin" constant="27" id="DHP-UE-gqG"/>
+                                                        <constraint firstItem="YyU-K4-2Q0" firstAttribute="trailing" secondItem="Wp6-Gh-lZH" secondAttribute="trailingMargin" constant="-26" id="i0b-75-pXq"/>
+                                                        <constraint firstItem="YyU-K4-2Q0" firstAttribute="centerY" secondItem="Wp6-Gh-lZH" secondAttribute="centerY" constant="-0.5" id="vqJ-XX-XCr"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="centerY" secondItem="j4s-pO-iHC" secondAttribute="centerY" id="Jen-Ep-oAk"/>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="leading" secondItem="j4s-pO-iHC" secondAttribute="leadingMargin" constant="-8" id="UCE-aS-Don"/>
+                                            <constraint firstItem="Wp6-Gh-lZH" firstAttribute="trailing" secondItem="zdu-by-846" secondAttribute="trailing" id="VbY-Gd-S8Z"/>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="centerX" secondItem="j4s-pO-iHC" secondAttribute="centerX" id="cyM-74-Tls"/>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="leading" secondItem="Wp6-Gh-lZH" secondAttribute="leading" id="gEs-oV-wZn"/>
+                                            <constraint firstItem="Wp6-Gh-lZH" firstAttribute="top" secondItem="zdu-by-846" secondAttribute="top" id="tw5-U1-zr3"/>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="bottom" secondItem="Wp6-Gh-lZH" secondAttribute="bottom" id="uZk-za-cET"/>
+                                            <constraint firstItem="zdu-by-846" firstAttribute="top" secondItem="j4s-pO-iHC" secondAttribute="topMargin" constant="-8" id="usM-JO-d22"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="469"/>
+                                        <connections>
+                                            <outlet property="backgroundColorView" destination="Wp6-Gh-lZH" id="gqV-Br-5W5"/>
+                                            <outlet property="featuredImageView" destination="zdu-by-846" id="HrB-J3-ZAa"/>
+                                            <outlet property="titleLabel" destination="YyU-K4-2Q0" id="v3L-Vf-JAe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EYe-l9-yA8" firstAttribute="leading" secondItem="8uq-vO-egE" secondAttribute="leading" id="FVv-OR-boA"/>
+                            <constraint firstItem="EYe-l9-yA8" firstAttribute="bottom" secondItem="8uq-vO-egE" secondAttribute="bottom" id="aB5-0Q-adB"/>
+                            <constraint firstItem="EYe-l9-yA8" firstAttribute="top" secondItem="8uq-vO-egE" secondAttribute="top" id="cWV-7x-MTF"/>
+                            <constraint firstItem="EYe-l9-yA8" firstAttribute="centerX" secondItem="ymx-Ld-VeD" secondAttribute="centerX" id="yug-eI-LZc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8uq-vO-egE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="JLb-vu-xVd"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="EYe-l9-yA8" id="Grd-ym-Q7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMH-va-6RS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.7101449275362" y="120.53571428571428"/>
+        </scene>
+        <!--My Kit-->
+        <scene sceneID="9q2-D6-K0A">
+            <objects>
+                <viewController storyboardIdentifier="MyKitVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kk9-RE-4Fm" customClass="MyKitViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C4G-8K-giN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOh-7O-bIg">
+                                <rect key="frame" x="107" y="550" width="200" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JXO-wX-WiT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Kit" largeTitleDisplayMode="always" id="eWp-au-d6v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1W-xC-NLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="120.53571428571428"/>
+        </scene>
+        <!--My Wishlist-->
+        <scene sceneID="OfR-LQ-gBM">
+            <objects>
+                <viewController storyboardIdentifier="MyWishlistVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bQ7-rp-Yod" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6C-BK-OxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Dee-k3-DqD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Wishlist" id="yki-tz-naW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUC-lu-WJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="115"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="l4A-0d-SbX">
+            <objects>
+                <navigationController storyboardIdentifier="NavCtrl" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="egK-MQ-3LL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="3" title="Home" image="heart.fill" catalog="system" id="jvq-o6-hgF"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="B3M-A3-J3B">
+                        <rect key="frame" x="0.0" y="44" width="414" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="40"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QJg-RE-ABR" kind="relationship" relationship="rootViewController" id="Zts-qW-PAX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="949-ZH-5bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cosm1" width="564" height="1002"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MyKitProduct" representedClassName="MyKitProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="myBrand" optional="YES" attributeType="String"/>
+        <attribute name="myDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="myId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="myImageLink" optional="YES" attributeType="String"/>
+        <attribute name="myName" optional="YES" attributeType="String"/>
+        <attribute name="myPrice" optional="YES" attributeType="String"/>
+        <attribute name="myProductColorHex" optional="YES" attributeType="String"/>
+        <attribute name="myProductColorName" optional="YES" attributeType="String"/>
+        <attribute name="myProductDescription" optional="YES" attributeType="String"/>
+        <attribute name="myProductLink" optional="YES" attributeType="String"/>
+        <attribute name="myProductType" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MyWishlistProduct" representedClassName="MyKitProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageLink" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="productColorHex" optional="YES" attributeType="String"/>
+        <attribute name="productColorName" optional="YES" attributeType="String"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <attribute name="productLink" optional="YES" attributeType="String"/>
+        <attribute name="productType" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="MyKitProduct" positionX="-281.8203125" positionY="93.859375" width="128" height="208"/>
+        <element name="MyWishlistProduct" positionX="-36" positionY="90" width="128" height="208"/>
+    </elements>
+</model>
