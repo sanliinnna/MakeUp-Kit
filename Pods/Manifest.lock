@@ -1,0 +1,16 @@
+PODS:
+  - AnimatedGradientView (2.1.0)
+
+DEPENDENCIES:
+  - AnimatedGradientView
+
+SPEC REPOS:
+  trunk:
+    - AnimatedGradientView
+
+SPEC CHECKSUMS:
+  AnimatedGradientView: 12f1cff220a83a1783eca3386d6dbded737d6aeb
+
+PODFILE CHECKSUM: 78f66c4de10168cc083f9cc19eeb5e11568233f1
+
+COCOAPODS: 1.9.1

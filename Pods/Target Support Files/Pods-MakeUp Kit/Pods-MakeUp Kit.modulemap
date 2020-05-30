@@ -1,0 +1,6 @@
+framework module Pods_MakeUp_Kit {
+  umbrella header "Pods-MakeUp Kit-umbrella.h"
+
+  export *
+  module * { export * }
+}
