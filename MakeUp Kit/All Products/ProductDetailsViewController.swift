@@ -7,24 +7,41 @@
 //
 
 import UIKit
+import Foundation
 
-//class ProductDetailsViewController: UIViewController {
+protocol AddProductDelegat {
+    func update()
+}
 
+class ProductDetailsViewController: UIViewController {
+    
+    var product: Product?
+    var delegate: AddProductDelegat?
+
+    //  MARK: Outlets
+    
+//    @IBOutlet weak var productNameLabel: UILabel!
+//    @IBOutlet weak var productImageView: UIImageView!
+//    @IBOutlet weak var goBackButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = product?.name
+        navigationController?.navigationBar.prefersLargeTitles = false
 
-        // Do any additional setup after loading the view.
+//        productNameLabel.text = product?.name
+//        productImageView.contentMode = .scaleAspectFill
+//        productImageView.downloaded(from: (product?.imageLink)!)
+        
+        
     }
     
+//    @IBAction func addToBag(_ sender: UIButton) {
+//            DManager.share.saveProduct(name: productNameLabel.text)
+//            delegate?.update()
+//
+//        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
