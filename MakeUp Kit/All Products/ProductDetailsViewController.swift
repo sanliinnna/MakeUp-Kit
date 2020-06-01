@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import SafariServices
 
 protocol AddProductDelegat {
     func update()
@@ -75,7 +76,23 @@ class ProductDetailsViewController: UIViewController {
 //
 //        }
 
-
+//    @IBAction func openBrandSite(_ sender: UIButton) {
+//        showSafariVC(for: self.product?.productLink)
+//    }
+    @IBAction func openProductPage(_ sender: UIButton) {
+        showSafariVC(for: (self.product?.productLink)!)
+    }
+    
+    func showSafariVC(for url: String) {
+        guard let url = URL(string: url) else {
+            return
+        }
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true)
+    }
+    
+    
+    
 }
 
 extension ProductDetailsViewController: UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
