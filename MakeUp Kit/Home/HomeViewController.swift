@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AnimatedGradientView
 
 class HomeViewController: UIViewController {
     

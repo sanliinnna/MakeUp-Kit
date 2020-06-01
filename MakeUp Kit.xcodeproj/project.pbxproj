@@ -31,6 +31,7 @@
 		9C64C8482483055C004624E0 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C8472483055C004624E0 /* DBManager.swift */; };
 		9C64C84A24830BEE004624E0 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C84924830BEE004624E0 /* ProductDetailsViewController.swift */; };
 		9C64C84C24830C08004624E0 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C84B24830C08004624E0 /* ProductCollectionViewCell.swift */; };
+		9C64C851248462DD004624E0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C850248462DB004624E0 /* ColorCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		9C64C8472483055C004624E0 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		9C64C84924830BEE004624E0 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		9C64C84B24830C08004624E0 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C64C850248462DB004624E0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		C574E1594689AE4250B5932A /* Pods_MakeUp_Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeUp_Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9C64C81624818913004624E0 /* AllProducts.storyboard */,
+				9C64C850248462DB004624E0 /* ColorCollectionViewCell.swift */,
 				9C64C83F2483023B004624E0 /* AllProductsViewController.swift */,
 				9C64C84924830BEE004624E0 /* ProductDetailsViewController.swift */,
 				9C64C84B24830C08004624E0 /* ProductCollectionViewCell.swift */,
@@ -324,6 +327,7 @@
 				9C64C84A24830BEE004624E0 /* ProductDetailsViewController.swift in Sources */,
 				9C64C8402483023B004624E0 /* AllProductsViewController.swift in Sources */,
 				9C64C84624830513004624E0 /* imageDownload.swift in Sources */,
+				9C64C851248462DD004624E0 /* ColorCollectionViewCell.swift in Sources */,
 				9C64C8362481AC07004624E0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,16 +1,18 @@
 PODS:
-  - AnimatedGradientView (2.1.0)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
 
 DEPENDENCIES:
-  - AnimatedGradientView
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
-    - AnimatedGradientView
+    - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
-  AnimatedGradientView: 12f1cff220a83a1783eca3386d6dbded737d6aeb
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
 
-PODFILE CHECKSUM: 78f66c4de10168cc083f9cc19eeb5e11568233f1
+PODFILE CHECKSUM: 9c151b375856a1f9100ea27035ee7f5af520bb09
 
 COCOAPODS: 1.9.1

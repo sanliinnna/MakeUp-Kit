@@ -10,9 +10,6 @@
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
-        <array key="Poppins-SemiBold.ttf">
-            <string>Poppins-SemiBold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -119,15 +116,6 @@
                     <view key="view" contentMode="scaleToFill" id="C4G-8K-giN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOh-7O-bIg">
-                                <rect key="frame" x="107" y="550" width="200" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JXO-wX-WiT"/>
                     </view>
