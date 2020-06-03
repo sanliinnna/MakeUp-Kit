@@ -1,40 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0xh-Km-Am0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Settings-->
         <scene sceneID="2yw-io-w4p">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5TX-Gg-mvR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5TX-Gg-mvR" customClass="SettingsViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wAv-DI-Rxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpY-LZ-NOY">
-                                <rect key="frame" x="186" y="310" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQc-Dw-LMK">
+                                <rect key="frame" x="20" y="146" width="374" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVG-bk-F8E">
+                                <rect key="frame" x="20" y="190" width="374" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VN4-2u-idM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Q-If-Yvb">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="About App" image="app.badge.fill" catalog="system">
+                                                    <color key="titleColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="aboutAppButtonTapped:" destination="5TX-Gg-mvR" eventType="touchUpInside" id="XGp-bR-g8s"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-vg-6IE">
+                                                <rect key="frame" x="0.0" y="40" width="374" height="40"/>
+                                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="About API" image="doc.text.fill" catalog="system">
+                                                    <color key="titleColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="aboutApiButtonTapped:" destination="5TX-Gg-mvR" eventType="touchUpInside" id="Dmv-l0-jgf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="VN4-2u-idM" firstAttribute="leading" secondItem="VVG-bk-F8E" secondAttribute="leading" id="CdG-7N-DXY"/>
+                                    <constraint firstAttribute="trailing" secondItem="VN4-2u-idM" secondAttribute="trailing" id="Pnv-v7-bqc"/>
+                                    <constraint firstItem="VN4-2u-idM" firstAttribute="top" secondItem="VVG-bk-F8E" secondAttribute="top" id="UEP-Vn-HjL"/>
+                                    <constraint firstAttribute="bottom" secondItem="VN4-2u-idM" secondAttribute="bottom" id="uFa-Ie-1ES"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upo-EY-dzD" userLabel="About">
+                                <rect key="frame" x="20" y="280" width="374" height="37"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fy-nR-JdD">
+                                <rect key="frame" x="20" y="324" width="374" height="121"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CKK-UX-jMo">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="121"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TS-Vm-pfD">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40.5"/>
+                                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Rate app" image="star.fill" catalog="system">
+                                                    <color key="titleColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rateButtonTapped:" destination="5TX-Gg-mvR" eventType="touchUpInside" id="diB-IJ-Tlw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2R-UW-5zl">
+                                                <rect key="frame" x="0.0" y="40.5" width="374" height="40"/>
+                                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Contact us" image="envelope.badge.fill" catalog="system">
+                                                    <color key="titleColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactButtonTapped:" destination="5TX-Gg-mvR" eventType="touchUpInside" id="9ch-zx-DeI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ris-Pe-iws">
+                                                <rect key="frame" x="0.0" y="80.5" width="374" height="40.5"/>
+                                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Share app" image="square.and.arrow.up.fill" catalog="system">
+                                                    <color key="titleColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shareButtonTapped:" destination="5TX-Gg-mvR" eventType="touchUpInside" id="4MJ-qI-VgG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="121" id="wtG-sJ-36A"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CKK-UX-jMo" secondAttribute="trailing" id="CRc-Ly-CAr"/>
+                                    <constraint firstItem="CKK-UX-jMo" firstAttribute="leading" secondItem="6fy-nR-JdD" secondAttribute="leading" id="DM2-rB-1al"/>
+                                    <constraint firstItem="CKK-UX-jMo" firstAttribute="top" secondItem="6fy-nR-JdD" secondAttribute="top" id="Fvi-v7-It7"/>
+                                    <constraint firstItem="CKK-UX-jMo" firstAttribute="centerY" secondItem="6fy-nR-JdD" secondAttribute="centerY" id="Jj9-bD-XiG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Upo-EY-dzD" firstAttribute="trailing" secondItem="6fy-nR-JdD" secondAttribute="trailing" id="4Lo-t0-Q0l"/>
+                            <constraint firstItem="6fy-nR-JdD" firstAttribute="top" secondItem="Upo-EY-dzD" secondAttribute="bottom" constant="7" id="4Zq-eh-ogN"/>
+                            <constraint firstItem="Upo-EY-dzD" firstAttribute="leading" secondItem="6fy-nR-JdD" secondAttribute="leading" id="I7V-CU-cmC"/>
+                            <constraint firstItem="YQc-Dw-LMK" firstAttribute="leading" secondItem="wAv-DI-Rxk" secondAttribute="leadingMargin" id="ML0-xq-iQQ"/>
+                            <constraint firstItem="Upo-EY-dzD" firstAttribute="top" secondItem="wAv-DI-Rxk" secondAttribute="top" constant="280" id="NS4-am-UPD"/>
+                            <constraint firstItem="VVG-bk-F8E" firstAttribute="top" secondItem="YQc-Dw-LMK" secondAttribute="bottom" constant="7.5" id="UtG-rg-4UL"/>
+                            <constraint firstItem="YQc-Dw-LMK" firstAttribute="trailing" secondItem="VVG-bk-F8E" secondAttribute="trailing" id="WJi-tA-j9d"/>
+                            <constraint firstItem="YQc-Dw-LMK" firstAttribute="leading" secondItem="VVG-bk-F8E" secondAttribute="leading" id="Zis-Lu-bbr"/>
+                            <constraint firstItem="Upo-EY-dzD" firstAttribute="top" secondItem="VVG-bk-F8E" secondAttribute="bottom" constant="10" id="aER-nX-huM"/>
+                            <constraint firstItem="YQc-Dw-LMK" firstAttribute="trailing" secondItem="wAv-DI-Rxk" secondAttribute="trailingMargin" id="dcJ-Z9-NYc"/>
+                            <constraint firstItem="VVG-bk-F8E" firstAttribute="leading" secondItem="Upo-EY-dzD" secondAttribute="leading" id="dec-PS-4uy"/>
+                            <constraint firstItem="YQc-Dw-LMK" firstAttribute="top" secondItem="kFw-rI-dkJ" secondAttribute="top" id="gkD-PW-BMi"/>
+                            <constraint firstItem="VVG-bk-F8E" firstAttribute="trailing" secondItem="Upo-EY-dzD" secondAttribute="trailing" id="syk-mh-17c"/>
+                            <constraint firstItem="kFw-rI-dkJ" firstAttribute="bottom" secondItem="6fy-nR-JdD" secondAttribute="bottom" constant="368" id="wHK-RF-Ecd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kFw-rI-dkJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="9KQ-4Q-nI7"/>
+                    <navigationItem key="navigationItem" title="Settings" id="V82-gv-9r7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulf-zJ-m7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="122"/>
+            <point key="canvasLocation" x="1028.985507246377" y="121.875"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="hzO-Tk-hje">
+            <objects>
+                <navigationController storyboardIdentifier="NavCtrlVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0xh-Km-Am0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="9KQ-4Q-nI7"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CVf-XK-oB7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="30"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="40"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5TX-Gg-mvR" kind="relationship" relationship="rootViewController" id="rcc-Bt-GZa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFm-sn-GwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.84057971014494" y="121.875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="app.badge.fill" catalog="system" width="128" height="118"/>
+        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
+        <image name="envelope.badge.fill" catalog="system" width="128" height="98"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

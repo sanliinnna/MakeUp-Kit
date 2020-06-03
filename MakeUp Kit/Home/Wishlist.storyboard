@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--My Wishlist-->
+        <scene sceneID="hSO-Kk-ES0">
+            <objects>
+                <viewController storyboardIdentifier="MyWishlistVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXe-sR-rsM" customClass="WishlistViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0C-uF-CbN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eDo-20-7Ur">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KitProductCell" rowHeight="163" id="nm8-b8-hbg" customClass="KitProductTableViewCell" customModule="MakeUp_Kit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="163"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nm8-b8-hbg" id="nPy-a4-NQz">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="163"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Namem Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nNw-gH-YBh">
+                                                    <rect key="frame" x="20" y="16" width="342" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="342" id="7cb-Ko-WUI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRH-wi-qrq">
+                                                    <rect key="frame" x="20" y="96" width="342" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="syh-oX-t5I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFq-fu-GF7">
+                                                    <rect key="frame" x="20" y="125" width="342" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="OYz-dR-mf7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DFq-fu-GF7" firstAttribute="top" secondItem="vRH-wi-qrq" secondAttribute="bottom" constant="8" id="5FJ-w1-0jE"/>
+                                                <constraint firstItem="nNw-gH-YBh" firstAttribute="trailing" secondItem="vRH-wi-qrq" secondAttribute="trailing" id="6Lw-o4-isC"/>
+                                                <constraint firstItem="vRH-wi-qrq" firstAttribute="trailing" secondItem="DFq-fu-GF7" secondAttribute="trailing" id="7GK-aF-z0D"/>
+                                                <constraint firstItem="nNw-gH-YBh" firstAttribute="top" secondItem="nPy-a4-NQz" secondAttribute="topMargin" constant="5" id="8PQ-HX-e8w"/>
+                                                <constraint firstItem="nNw-gH-YBh" firstAttribute="trailing" secondItem="nPy-a4-NQz" secondAttribute="trailingMargin" id="HeN-JJ-mXn"/>
+                                                <constraint firstItem="vRH-wi-qrq" firstAttribute="top" secondItem="nNw-gH-YBh" secondAttribute="bottom" constant="8" id="MP7-Nh-5pd"/>
+                                                <constraint firstItem="nNw-gH-YBh" firstAttribute="leading" secondItem="vRH-wi-qrq" secondAttribute="leading" id="enj-hS-yka"/>
+                                                <constraint firstItem="vRH-wi-qrq" firstAttribute="leading" secondItem="DFq-fu-GF7" secondAttribute="leading" id="u13-Xr-FVs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DFq-fu-GF7" secondAttribute="bottom" constant="6" id="u8s-JV-oCF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="brandLabel" destination="vRH-wi-qrq" id="3ZW-vj-QC1"/>
+                                            <outlet property="nameLabel" destination="nNw-gH-YBh" id="Cy7-t9-UIE"/>
+                                            <outlet property="typeLabel" destination="DFq-fu-GF7" id="e6Q-cT-KTl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="aXe-sR-rsM" id="IVc-6g-JoQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="eDo-20-7Ur" secondAttribute="bottom" constant="-34" id="B20-kI-aPb"/>
+                            <constraint firstItem="eDo-20-7Ur" firstAttribute="top" secondItem="hhS-Fp-Cp1" secondAttribute="top" id="GhE-Xf-AbB"/>
+                            <constraint firstItem="eDo-20-7Ur" firstAttribute="leading" secondItem="hhS-Fp-Cp1" secondAttribute="leading" id="X3P-EH-4MF"/>
+                            <constraint firstItem="eDo-20-7Ur" firstAttribute="centerX" secondItem="R0C-uF-CbN" secondAttribute="centerX" id="ibN-DZ-0ds"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hhS-Fp-Cp1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Wishlist" id="utx-HS-d7o"/>
+                    <connections>
+                        <outlet property="tableView" destination="eDo-20-7Ur" id="Fbq-C5-vFR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5a-gp-0lZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="121"/>
+        </scene>
+    </scenes>
+</document>

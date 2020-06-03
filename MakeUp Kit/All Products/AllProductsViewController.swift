@@ -28,7 +28,6 @@ class AllProductsViewController: UIViewController {
     
 
     let searchController = UISearchController(searchResultsController: nil)
-//    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +54,10 @@ class AllProductsViewController: UIViewController {
                 self.tempProducts = products
             }
         }
-        
-//        refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
-//        self.collectionView.addSubview(refreshControl)
-        
+            
 
     }
+    
     
     fileprivate func startAnimation() {
         loading.translatesAutoresizingMaskIntoConstraints = false
@@ -74,14 +70,7 @@ class AllProductsViewController: UIViewController {
         ])
         loading.startAnimating()
     }
-    
-//    @objc func didPullToRefresh() {
-//        print("Refersh")
-//        self.allProducts.removeAll()
-//        self.allProducts = self.tempProducts
-//        self.collectionView.reloadData()
-//        refreshControl?.endRefreshing()
-//    }
+
     
     
     

@@ -1,32 +1,30 @@
 //
-//  MyKitViewController.swift
+//  WishlistViewController.swift
 //  MakeUp Kit
 //
-//  Created by Alina Huk on 30.05.2020.
+//  Created by Alina Huk on 01.06.2020.
 //  Copyright © 2020 Alina Huk. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class MyKitViewController: UIViewController {
+class WishlistViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     
     let vc = UIStoryboard(name: "AllProducts", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsViewController
     var refreshControl: UIRefreshControl!
     
     var products: [MyKitProduct]?
     
-    var kitProducts: [MyKitProduct] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var wishProducts: [MyKitProduct] = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchData()
         append()
         tableView.dataSource = self
@@ -36,11 +34,12 @@ class MyKitViewController: UIViewController {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
-    
         
-        if kitProducts.isEmpty {
+        if wishProducts.isEmpty {
             alert()
         }
+        
+
     }
     
     private func fetchData() {
@@ -48,21 +47,16 @@ class MyKitViewController: UIViewController {
     }
     
     func update() {
-        self.kitProducts = []
+        self.wishProducts = []
         fetchData()
         append()
         tableView.reloadData()
     }
     
-    @objc func didPullToRefresh() {
-            update()
-            refreshControl?.endRefreshing()
-    }
-    
     func append() {
         for product in products! {
-            if product.section == "MyKit" {
-                kitProducts.append(product)
+            if product.section == "Wishlist" {
+                wishProducts.append(product)
             }
         }
     }
@@ -76,32 +70,39 @@ class MyKitViewController: UIViewController {
         }))
         present(alert, animated: true)
     }
+    
+    
+    @objc func didPullToRefresh() {
+            update()
+            refreshControl?.endRefreshing()
+    }
+
 
 }
 
-extension MyKitViewController: UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, AddProductDelegat {
+extension WishlistViewController: UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, AddProductDelegat {
     
     // MARK: - Table view data sourse
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return kitProducts.count 
+            return wishProducts.count 
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let product = kitProducts[indexPath.row]
+            let product = wishProducts[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "KitProductCell", for: indexPath) as! KitProductTableViewCell
             cell.nameLabel.text = product.name
             cell.brandLabel.text = product.brand
             cell.typeLabel.text = product.productType
-//            cell.productImageView.contentMode = .scaleAspectFill
-//            cell.productImageView.downloaded(from: (product?.imageLink)!)
+//            cell.imgView.contentMode = .scaleAspectFill
+//            cell.imgView.downloaded(from: product.imageLink!)
             return cell
         }
         
         // MARK: - Table view data delegete
         
         func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let product = kitProducts[indexPath.row]
+            let product = wishProducts[indexPath.row]
             let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
                 DManager.share.delete(product: product)
                 self.update()
@@ -113,3 +114,4 @@ extension MyKitViewController: UITableViewDataSource, UITableViewDelegate, NSFet
         }
     
 }
+

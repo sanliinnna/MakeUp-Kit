@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import SafariServices
+import CoreData
 
 protocol AddProductDelegat {
     func update()
@@ -19,13 +20,15 @@ class ProductDetailsViewController: UIViewController {
     var product: Product?
     var colors: [Color]?
     var delegate: AddProductDelegat?
+    var savedProducts: [MyKitProduct]?
 
     //  MARK: Outlets
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
 //    @IBOutlet weak var detailsView: UIView!
-    
+    @IBOutlet weak var addToKitButton: UIButton!
+    @IBOutlet weak var addToWishlistButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -40,16 +43,10 @@ class ProductDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        title = "Product Details"
         
         scrollView.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-
-//        navigationController?.navigationBar.prefersLargeTitles = false
-//        let navigationBarAppearence = UINavigationBarAppearance()
-//        navigationBarAppearence.shadowColor = .clear
-//        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearence
 
         nameLabel.text = product?.name
         imageView.contentMode = .scaleAspectFill
@@ -66,19 +63,97 @@ class ProductDetailsViewController: UIViewController {
             colorLabel.isHidden = true
         }
         
+        buttonEnable()
+        
+//        addToKitButton.isEnabled = false
+//        let checkExisting = DManager.share.checkExisting(newProduct: product!)
+//        if !checkExisting {
+//            addToKitButton.isEnabled = true
+//        }
         
         
     }
     
-//    @IBAction func addToBag(_ sender: UIButton) {
-//            DManager.share.saveProduct(name: productNameLabel.text)
-//            delegate?.update()
-//
-//        }
-
-//    @IBAction func openBrandSite(_ sender: UIButton) {
-//        showSafariVC(for: self.product?.productLink)
-//    }
+    private func fetchData() {
+        self.savedProducts = DManager.share.products
+    }
+    
+    func checkExisting(button: UIButton, section: String) -> Bool {
+        var flag = true
+        for item in savedProducts! {
+            if product?.name == item.name && item.section == section {
+                print(item)
+                flag = false
+                return flag
+            } else {
+                flag = true
+            }
+        }
+        return flag
+    }
+    
+    func buttonEnable() {
+        fetchData()
+        addToKitButton.isEnabled = checkExisting(button: addToKitButton, section: "MyKit")
+        addToWishlistButton.isEnabled = checkExisting(button: addToWishlistButton, section: "Wishlist")
+    }
+    
+    func savedProduct() -> MyKitProduct {
+        var saved: MyKitProduct?
+        for item in savedProducts! {
+            if product?.name == item.name {
+                saved = item
+            }
+        }
+        return saved!
+    }
+    
+    
+    func confirmation(addedTo: String, wantTo: String) {
+        let alert = UIAlertController(title: "Warning!", message: "This product is already added to your \(addedTo). Add it to your \(wantTo)?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (action) in
+            DManager.share.saveProduct(id: (self.product?.id)!, name: self.product?.name, brand: self.product?.brand, type: self.product?.productType, price: self.product?.price, imageLink: self.product?.imageLink, productLink: self.product?.productLink, description: self.product?.description, section: "\(wantTo)")
+            self.delegate?.update()
+            self.buttonEnable()
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Delete & Add", style: .destructive, handler: { (action) in
+            self.savedProduct()
+            DManager.share.updateSection(product: self.savedProduct(), section: "\(wantTo)")
+            self.delegate?.update()
+            self.buttonEnable()
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true)
+    }
+    
+    
+    @IBAction func addToMyKit(_ sender: UIButton) {
+        if addToWishlistButton.isEnabled == false {
+            confirmation(addedTo: "Wishlist", wantTo: "MyKit")
+        } else {
+            DManager.share.saveProduct(id: (self.product?.id)!, name: self.product?.name, brand: self.product?.brand, type: self.product?.productType, price: self.product?.price, imageLink: self.product?.imageLink, productLink: self.product?.productLink, description: self.product?.description, section: "MyKit")
+            self.delegate?.update()
+            self.buttonEnable()
+        }
+    }
+    @IBAction func addToWishlist(_ sender: UIButton) {
+        if addToKitButton.isEnabled == false {
+        confirmation(addedTo: "MyKit", wantTo: "Wishlist")
+        } else {
+            DManager.share.saveProduct(id: (self.product?.id)!, name: self.product?.name, brand: self.product?.brand, type: self.product?.productType, price: self.product?.price, imageLink: self.product?.imageLink, productLink: self.product?.productLink, description: self.product?.description, section: "Wishlist")
+            self.delegate?.update()
+            self.buttonEnable()
+        }
+        
+    }
+    
+    
     @IBAction func openProductPage(_ sender: UIButton) {
         showSafariVC(for: (self.product?.productLink)!)
     }
