@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-class DManager {
+class DBManager {
     
-    static var share = DManager()
+    static var share = DBManager()
     
     var products: [MyKitProduct]? {
         get {

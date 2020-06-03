@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="60" minY="0.0" maxX="60" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MySectionCollectionViewCell" id="j4s-pO-iHC" customClass="MySectionCollectionViewCell" customModule="MakeUp_Kit" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionCollectionViewCell" id="j4s-pO-iHC" customClass="SectionCollectionViewCell" customModule="MakeUp_Kit" customModuleProvider="target">
                                         <rect key="frame" x="60" y="128" width="300" height="469"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -43,6 +43,12 @@
                                                         <constraint firstAttribute="height" constant="469" id="NyM-g5-2EM"/>
                                                         <constraint firstAttribute="width" constant="300" id="zNf-AC-z0d"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-Gh-lZH">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="469"/>
@@ -60,13 +66,18 @@
                                                             <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.33256662436548223" green="0.13473268902027224" blue="0.23752612684743304" alpha="0.2637253852739726" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="YyU-K4-2Q0" firstAttribute="top" secondItem="Wp6-Gh-lZH" secondAttribute="top" constant="123" id="3pk-de-6f2"/>
                                                         <constraint firstItem="YyU-K4-2Q0" firstAttribute="leading" secondItem="Wp6-Gh-lZH" secondAttribute="leadingMargin" constant="27" id="DHP-UE-gqG"/>
                                                         <constraint firstItem="YyU-K4-2Q0" firstAttribute="trailing" secondItem="Wp6-Gh-lZH" secondAttribute="trailingMargin" constant="-26" id="i0b-75-pXq"/>
                                                         <constraint firstItem="YyU-K4-2Q0" firstAttribute="centerY" secondItem="Wp6-Gh-lZH" secondAttribute="centerY" constant="-0.5" id="vqJ-XX-XCr"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -81,10 +92,22 @@
                                             <constraint firstItem="zdu-by-846" firstAttribute="top" secondItem="j4s-pO-iHC" secondAttribute="topMargin" constant="-8" id="usM-JO-d22"/>
                                         </constraints>
                                         <size key="customSize" width="300" height="469"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                <size key="value" width="1" height="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="backgroundColorView" destination="Wp6-Gh-lZH" id="gqV-Br-5W5"/>
-                                            <outlet property="featuredImageView" destination="zdu-by-846" id="HrB-J3-ZAa"/>
-                                            <outlet property="titleLabel" destination="YyU-K4-2Q0" id="v3L-Vf-JAe"/>
+                                            <outlet property="backgroundColorView" destination="Wp6-Gh-lZH" id="wdf-aq-bNO"/>
+                                            <outlet property="featuredImageView" destination="zdu-by-846" id="LT4-uN-IGZ"/>
+                                            <outlet property="titleLabel" destination="YyU-K4-2Q0" id="aKn-WF-Wuv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -117,7 +140,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="B3M-A3-J3B">
-                        <rect key="frame" x="0.0" y="44" width="414" height="98"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

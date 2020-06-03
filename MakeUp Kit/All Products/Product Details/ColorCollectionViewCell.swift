@@ -10,6 +10,8 @@ import UIKit
 
 class ColorCollectionViewCell: UICollectionViewCell {
     
+//  MARK: Outlets
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
     

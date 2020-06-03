@@ -21,7 +21,7 @@
         <!--My Wishlist-->
         <scene sceneID="hSO-Kk-ES0">
             <objects>
-                <viewController storyboardIdentifier="MyWishlistVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXe-sR-rsM" customClass="WishlistViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishlistVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXe-sR-rsM" customClass="WishlistViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R0C-uF-CbN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

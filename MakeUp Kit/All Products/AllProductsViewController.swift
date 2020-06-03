@@ -11,8 +11,11 @@ import NVActivityIndicatorView
 
 class AllProductsViewController: UIViewController {
     
+//    MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+//    MARK: - Variables & Constants
     
     var allProducts = [Product]() {
         didSet {
@@ -25,23 +28,18 @@ class AllProductsViewController: UIViewController {
     var tempProducts = [Product]()
     
     let loading = NVActivityIndicatorView(frame: .zero, type: .circleStrokeSpin, color: .black, padding: 0)
-    
-
     let searchController = UISearchController(searchResultsController: nil)
+    
+//    MARK: -
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startAnimation()
         
+        startAnimation()
         
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
-
         navigationItem.hidesSearchBarWhenScrolling = false
-
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
         
         ProductRequest().getProducts { result  in
             switch result {
@@ -50,14 +48,16 @@ class AllProductsViewController: UIViewController {
             case .success(let products):
                 print("No error found.")
                 self.allProducts = products
-                print(self.allProducts.count)
                 self.tempProducts = products
             }
         }
-            
-
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
     }
     
+//    MARK: - Functions & Actions
     
     fileprivate func startAnimation() {
         loading.translatesAutoresizingMaskIntoConstraints = false
@@ -71,18 +71,18 @@ class AllProductsViewController: UIViewController {
         loading.startAnimating()
     }
 
-    
-    
-    
     @IBAction func reloadProducts(_ sender: UIBarButtonItem) {
         self.allProducts = self.tempProducts
         self.collectionView.reloadData()
     }
     
-
 }
 
+//    MARK: -
+
 extension AllProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+    
+//    MARK: - Collection View Data Source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allProducts.count
@@ -98,17 +98,7 @@ extension AllProductsViewController: UICollectionViewDataSource, UICollectionVie
         return cell
         
     }
-            
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let vc = UIStoryboard(name: "AllProducts", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsViewController
-        let product = allProducts[indexPath.item]
-        vc.product = product
-        navigationController?.pushViewController(vc, animated: true)
-
-
-    }
-        
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "searchBar", for: indexPath)
@@ -116,18 +106,30 @@ extension AllProductsViewController: UICollectionViewDataSource, UICollectionVie
         
     }
     
+//    MARK: - Collection View Delegate
+            
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let vc = UIStoryboard(name: "ProductDetails", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsViewController
+        let product = allProducts[indexPath.item]
+        vc.product = product
+        navigationController?.pushViewController(vc, animated: true)
+
+
+    }
+    
+//    MARK: - Search Bar Delegate
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.allProducts.removeAll()
         for item in self.tempProducts {
             if (item.name?.lowercased().contains(searchText.lowercased()))! {
                 self.allProducts.append(item)
-                print(self.allProducts.count)
             }
         }
 
         if searchText.isEmpty {
             self.allProducts = self.tempProducts
-            print(self.allProducts.count)
         }
 
         self.collectionView.reloadData()

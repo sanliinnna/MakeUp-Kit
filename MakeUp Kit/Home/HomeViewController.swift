@@ -10,52 +10,56 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var sections = Section.fetchSections()
-    let ids = ["MyKitVC", "MyWishlistVC"]
+//    MARK: - Variables, Constants & Outlets
+    
+    var sections: [Section]?
+    let vcs = ["Kit", "Wishlist"]
 
-    
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+//    MARK: -
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetch()
         collectionView.dataSource = self
         collectionView.delegate = self
         
     }
     
+    //    MARK: - Functions
     
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    
-        
+    func fetch() {
+        sections = Section.fetchSections()
     }
-
 }
 
+//    MARK: -
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
     
+    // MARK: - Collection View Data Source
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections.count
+        return sections!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "MySectionCollectionViewCell", for: indexPath) as! MySectionCollectionViewCell
-        let section = sections[indexPath.item]
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "SectionCollectionViewCell", for: indexPath) as! SectionCollectionViewCell
+        let section = sections![indexPath.item]
         cell.section = section
-        
         return cell
     }
     
+    // MARK: - Collection View Delegate
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let id = ids[indexPath.item]
-        let VC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: id)
+        let vc = vcs[indexPath.item]
+        let VC = UIStoryboard(name: vc, bundle: nil).instantiateViewController(identifier: "\(vc)VC")
         self.navigationController?.pushViewController(VC, animated: true)
     }
+    
+    // MARK: - Scroll View Delegate
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
