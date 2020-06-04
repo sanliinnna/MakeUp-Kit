@@ -32,7 +32,6 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         let shareController = UIActivityViewController(activityItems: ["http://makeup-api.herokuapp.com"], applicationActivities: nil)
-        
         present(shareController, animated: true)
     }
     

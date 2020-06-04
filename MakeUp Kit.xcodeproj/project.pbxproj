@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AF336A77E89FB451492011A /* Pods_MakeUp_Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C574E1594689AE4250B5932A /* Pods_MakeUp_Kit.framework */; };
+		9C3A5623248833F3002E4BDA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5622248833F3002E4BDA /* Notifications.swift */; };
 		9C64C7F8248186A4004624E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C7F7248186A4004624E0 /* AppDelegate.swift */; };
 		9C64C7FA248186A4004624E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64C7F9248186A4004624E0 /* SceneDelegate.swift */; };
 		9C64C801248186A4004624E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C64C7FF248186A4004624E0 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		1BD07B2BAE348CDD7A3DFB9C /* Pods-MakeUp Kit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeUp Kit.release.xcconfig"; path = "Target Support Files/Pods-MakeUp Kit/Pods-MakeUp Kit.release.xcconfig"; sourceTree = "<group>"; };
 		2D845F8AEDBF7D1609FA74B1 /* Pods-MakeUp Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeUp Kit.debug.xcconfig"; path = "Target Support Files/Pods-MakeUp Kit/Pods-MakeUp Kit.debug.xcconfig"; sourceTree = "<group>"; };
+		9C3A5622248833F3002E4BDA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		9C64C7F4248186A4004624E0 /* MakeUp Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MakeUp Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C64C7F7248186A4004624E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C64C7F9248186A4004624E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				9C64C81224818834004624E0 /* Settings */,
 				9C64C7FF248186A4004624E0 /* Main.storyboard */,
 				9C64C7F7248186A4004624E0 /* AppDelegate.swift */,
+				9C3A5622248833F3002E4BDA /* Notifications.swift */,
 				9C64C7F9248186A4004624E0 /* SceneDelegate.swift */,
 				9C64C805248186A8004624E0 /* Assets.xcassets */,
 				9C64C80A248186A8004624E0 /* Info.plist */,
@@ -380,6 +383,7 @@
 				9C64C8482483055C004624E0 /* DBManager.swift in Sources */,
 				9C64C7FA248186A4004624E0 /* SceneDelegate.swift in Sources */,
 				9C64C84A24830BEE004624E0 /* ProductDetailsViewController.swift in Sources */,
+				9C3A5623248833F3002E4BDA /* Notifications.swift in Sources */,
 				9C64C8402483023B004624E0 /* AllProductsViewController.swift in Sources */,
 				9C64C84624830513004624E0 /* imageDownload.swift in Sources */,
 				9C8EECBD2487F30900708DC8 /* hexColor.swift in Sources */,

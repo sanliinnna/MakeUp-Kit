@@ -100,7 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OEX-R5-9fl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Kit" id="nnN-3U-9T1"/>
+                    <navigationItem key="navigationItem" title="My Kit" largeTitleDisplayMode="never" id="nnN-3U-9T1"/>
                     <connections>
                         <outlet property="tableView" destination="t0t-1e-ZZV" id="Z5H-cX-SCC"/>
                     </connections>

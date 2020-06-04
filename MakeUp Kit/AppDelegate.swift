@@ -8,16 +8,25 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
+let notificationCenter = UNUserNotificationCenter.current()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .alert]) { (allowed, error) in
+            
+            guard allowed else { return }
+            notificationCenter.getNotificationSettings { (settings) in
+                guard settings.authorizationStatus == .authorized else { return }
+            }
+            
+        }
+        notificationCenter.delegate = self
         return true
     }
 
@@ -80,5 +89,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Notification clecked")
+    }
 }
 

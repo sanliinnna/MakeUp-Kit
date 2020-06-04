@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetch()
         collectionView.dataSource = self
         collectionView.delegate = self

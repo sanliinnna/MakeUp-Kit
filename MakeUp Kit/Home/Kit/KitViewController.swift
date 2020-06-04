@@ -18,11 +18,7 @@ class KitViewController: UIViewController {
     
     var products: [MyKitProduct]?
     
-    var kitProducts: [MyKitProduct] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var kitProducts: [MyKitProduct] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,15 +86,38 @@ extension KitViewController: UITableViewDataSource, UITableViewDelegate, NSFetch
         // MARK: - Table view data delegete
         
         func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let product = kitProducts[indexPath.row]
-            let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-                DBManager.share.delete(product: product)
-                self.update()
+                
+                let changeSection = changeSectionAction(at: indexPath)
+                let delete = deleteAction(at: indexPath)
+                return UISwipeActionsConfiguration(actions: [delete, changeSection])
+                
             }
-            action.backgroundColor = .red
-            
-            
-            return UISwipeActionsConfiguration(actions: [action])
-        }
-    
+        
+            func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+                let product = kitProducts[indexPath.row]
+                let action = UIContextualAction(style: .destructive, title: "") { (action, view, completion) in
+                    sendNotification(title: "Product was deleted", body: "5 seconds ago you deleted \(product.name!) from your Kit", interval: 5)
+                    DBManager.share.delete(product: product)
+                    self.kitProducts.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    completion(true)
+                }
+                action.backgroundColor = .red
+                action.image = UIImage(systemName: "trash.fill")
+                return action
+            }
+        
+            func changeSectionAction(at indexPath: IndexPath) -> UIContextualAction {
+                let product = kitProducts[indexPath.row]
+                let action = UIContextualAction(style: .destructive, title: "") { (action, view, completion) in
+                    sendNotification(title: "Product was moved", body: "5 seconds ago you moved \(product.name!) to your Kit", interval: 5)
+                    DBManager.share.updateSection(product: product, section: "Wishlist")
+                    self.kitProducts.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    completion(true)
+                }
+                action.backgroundColor = UIColor(hexString: "#FD77B7")
+                action.image = UIImage(systemName: "heart")
+                return action
+            }
 }
