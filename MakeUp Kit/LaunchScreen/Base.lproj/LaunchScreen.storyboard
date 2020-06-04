@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -14,13 +19,72 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l4" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-gm-F4j">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-c4-Vpb">
+                                <rect key="frame" x="0.0" y="0.0" width="426" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7DP-rr-oUz">
+                                    <rect key="frame" x="0.0" y="0.0" width="426" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-Tj-sm5">
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="768"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTQ-kH-tWi">
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="768"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="768" id="LBZ-0R-YKT"/>
+                                                <constraint firstAttribute="width" constant="186" id="t9C-8l-S8g"/>
+                                            </constraints>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My MakeUp Kit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUM-N2-pu8">
+                                            <rect key="frame" x="0.0" y="364" width="418" height="169"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="169" id="vOa-vP-IaV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="41"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LUM-N2-pu8" firstAttribute="leading" secondItem="jgW-Tj-sm5" secondAttribute="leading" id="1o7-Xx-sWA"/>
+                                        <constraint firstItem="LUM-N2-pu8" firstAttribute="trailing" secondItem="7DP-rr-oUz" secondAttribute="trailingMargin" id="Loj-33-HrZ"/>
+                                        <constraint firstItem="LUM-N2-pu8" firstAttribute="leading" secondItem="7DP-rr-oUz" secondAttribute="leading" id="MUa-Dy-58Q"/>
+                                        <constraint firstItem="LUM-N2-pu8" firstAttribute="top" secondItem="7DP-rr-oUz" secondAttribute="top" constant="364" id="WM5-eD-4W7"/>
+                                        <constraint firstItem="jgW-Tj-sm5" firstAttribute="top" secondItem="7DP-rr-oUz" secondAttribute="top" id="dLB-Iw-DVM"/>
+                                    </constraints>
+                                </view>
+                                <color key="tintColor" red="0.9526103138923645" green="0.3440588116645813" blue="0.6185295581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Va-gm-F4j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FKs-YH-4UX"/>
+                            <constraint firstItem="5Gn-c4-Vpb" firstAttribute="bottom" secondItem="7Va-gm-F4j" secondAttribute="bottom" id="eMn-LJ-54h"/>
+                            <constraint firstItem="5Gn-c4-Vpb" firstAttribute="top" secondItem="7Va-gm-F4j" secondAttribute="top" id="nnC-xo-XJc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Gn-c4-Vpb" secondAttribute="trailing" constant="-32" id="sgo-Du-E5O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Va-gm-F4j" secondAttribute="trailing" id="tIj-zC-Db7"/>
+                            <constraint firstItem="7Va-gm-F4j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="tdU-5A-6iS"/>
+                            <constraint firstItem="5Gn-c4-Vpb" firstAttribute="leading" secondItem="7Va-gm-F4j" secondAttribute="leading" id="uj8-BP-wdA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Va-gm-F4j" secondAttribute="bottom" constant="-34" id="yx7-T0-kAC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="l4" width="948" height="1412"/>
+    </resources>
 </document>
