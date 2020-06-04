@@ -72,8 +72,12 @@ class AllProductsViewController: UIViewController {
     }
 
     @IBAction func reloadProducts(_ sender: UIBarButtonItem) {
+        startAnimation()
         self.allProducts = self.tempProducts
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            self.loading.stopAnimating()
+        }
     }
     
 }
@@ -94,7 +98,9 @@ extension AllProductsViewController: UICollectionViewDataSource, UICollectionVie
         let product = allProducts[indexPath.item]
         cell.textLabel.text = product.name
         cell.imageView.contentMode = .scaleAspectFill
-        cell.imageView.downloaded(from: product.imageLink!)
+        DispatchQueue.main.async() {
+            cell.imageView.downloaded(from: product.imageLink!)
+        }
         return cell
         
     }

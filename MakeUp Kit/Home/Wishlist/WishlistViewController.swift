@@ -84,6 +84,19 @@ extension WishlistViewController: UITableViewDataSource, UITableViewDelegate, NS
         }
         
         // MARK: - Table View Data Delegete
+    
+        internal func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+            let product = wishProducts[indexPath.row]
+               let alert = UIAlertController(title: "Go to website", message: "Go to product website to see more information.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action) in
+                   alert.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "Go", style: .default, handler: { (action) in
+                   alert.dismiss(animated: true, completion: nil)
+                    UIApplication.shared.open(URL(string: product.productLink!)!)
+                }))
+               self.present(alert, animated: true)
+        }
         
         func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             
