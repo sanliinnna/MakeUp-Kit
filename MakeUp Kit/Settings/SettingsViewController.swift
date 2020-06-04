@@ -10,6 +10,9 @@ import UIKit
 import MessageUI
 
 class SettingsViewController: UIViewController {
+    
+    let urlLink = URL(string: "http://makeup-api.herokuapp.com")!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +20,18 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func openUrl(url: URL) {
+        UIApplication.shared.open(url)
+    }
+    
     @IBAction func aboutAppButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "http://makeup-api.herokuapp.com")!)
+        openUrl(url: urlLink)
     }
     @IBAction func aboutApiButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "http://makeup-api.herokuapp.com")!)
+        openUrl(url: urlLink)
     }
     @IBAction func rateButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "http://makeup-api.herokuapp.com")!)
+        openUrl(url: urlLink)
     }
     
     @IBAction func contactButtonTapped(_ sender: UIButton) {
@@ -34,20 +41,6 @@ class SettingsViewController: UIViewController {
         let shareController = UIActivityViewController(activityItems: ["http://makeup-api.herokuapp.com"], applicationActivities: nil)
         present(shareController, animated: true)
     }
-    
-    
-//    func showMailComposer() {
-//        guard MFMailComposeViewController.canSendMail() else {
-//            return
-//        }
-//
-//        let composer = MFMailComposeViewController()
-//        composer.mailComposeDelegate = self
-//        composer.setToRecipients(["huk@stud.onu.edu.ua"])
-//        composer.setSubject("Course Work!!!")
-//
-//        present(composer, animated: true)
-//    }
     
     func showMessageComposer() {
         
