@@ -52,7 +52,7 @@ class ProductDetailsViewController: UIViewController {
         imageView.downloaded(from: (product?.imageLink)!)
         brandLabel.text = "Brand: \(product?.brand ?? "unknown")"
         typeLabel.text = "Type: \(product?.productType ?? "unknown")"
-        priceLabel.text = "Price: $\(product?.price ?? "0")"
+        priceLabel.text = "Price: $\(product?.price ?? "0.00")"
         descTextView.text = product?.description
         if !(product?.productColors.isEmpty)! {
             colorLabel.text = "Colors: "
@@ -174,8 +174,8 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCell", for: indexPath) as! ColorCollectionViewCell
         let color = colors![indexPath.item]
-        cell.nameLabel.text = color.colourName ?? "Default"
-        cell.colorView.backgroundColor = UIColor(hexString: color.hexValue ?? "#000000")
+        cell.nameLabel.text = color.colourName ?? "Color"
+        cell.colorView.backgroundColor = UIColor(hexString: color.hexValue ?? "#FF007A")
         return cell
     }
     
