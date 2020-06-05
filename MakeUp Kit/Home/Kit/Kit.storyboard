@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--My Wishlist-->
+        <!--My Kit-->
         <scene sceneID="EKb-8P-mCq">
             <objects>
                 <viewController storyboardIdentifier="KitVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="ooZ-Eu-0s7" customClass="KitViewController" customModule="MakeUp_Kit" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,7 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xMu-FO-yAW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Wishlist" largeTitleDisplayMode="never" id="gIm-Ck-qZ1"/>
+                    <navigationItem key="navigationItem" title="My Kit" largeTitleDisplayMode="never" id="gIm-Ck-qZ1"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="LsF-L7-lK6" id="hSb-MN-Gab"/>
